@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Classic Books</title>
+</head>
+<body class="bg-slate-800 text-white">
+    <nav class="bg-slate-900 p-4 mb-6">
+        <div class="container max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 items-center">
+            <div class="relative w-full">
+                <h1 class="text-2xl font-bold">Classic Books</h1>
+            </div>
+            <!-- Search -->
+            <div class="relative w-full">
+                <input 
+                    type="text" 
+                    id="search" 
+                    class="bg-slate-700 rounded-full p-2 pl-10 focus:w-full"
+                    placeholder="Search for Books"
+                >
+            </div>
+    </nav>
+    <main class="flex flex-col mx-auto container max-w-6xl md:flex-row">
+        <div class="space-y-4 p-2 w-full max-w-[10rem]">
+            <h2 class="text-2xl font-bold">Filters</h2>
+            <h3 class="text-xl">Category</h3>
+            <div id="filters-container" class="text-xl space-y2">
+                <div>
+                    <input type="checkbox" class="check" id="fiction"/>
+                    <label for="fiction">Fiction</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="fiction"/>
+                    <label for="fiction">Fiction</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="fiction"/>
+                    <label for="fiction">Fiction</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="fiction"/>
+                    <label for="fiction">Fiction</label>
+                </div>
+            </div>
+            <!-- Books -->
+            <div 
+                id="books-wrapper" 
+                class="w-full mx-auto max-w-4xl grid grid-cols-2 gap-6 place-content-center p-4 sm:grid-cols-3 xl:grid-cols-4"
+            >
+
+            </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
