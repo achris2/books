@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Classic Books</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Classic Books </title>
 </head>
 <body class="bg-slate-800 text-white">
+    <!-- Navigation -->
     <nav class="bg-slate-900 p-4 mb-6">
         <div class="container max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 items-center">
             <div class="relative w-full">
-                <h1 class="text-2xl font-bold">Classic Books</h1>
+                <h1 class="text-3xl font-bold">Classic Books</h1>
             </div>
+            
             <!-- Search -->
             <div class="relative w-full">
                 <input 
@@ -44,53 +47,27 @@
                     <label for="fiction">Fiction</label>
                 </div>
             </div>
+            <div>
+                <h3 class="text-2xl font-bold">
+                    Reading List
+                </h3>
+                <span
+                class="inline-flex items-center justify-center rounded-full bg-red-500 px-2.5 py-0.5 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 9.24 3 10.91 4.21 11.67 6.02 12.44 4.21 14.11 3 15.85 3 19 3 21 5.42 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>                  
+                <p id="list-counter" class="whitespace-nowrap text-sm text-bold">0</p>
+                </span>
+                <p class="text-md py-3 tracking-wide">
+                    Click "Add to Reading List" and shortlist your favourite books. 
+                </p>
+            </div>
             </div>
             <!-- Books -->
             <div 
                 id="books-wrapper" 
                 class="w-full mx-auto max-w-4xl grid grid-cols-1 gap-6 place-content-center p-4 sm:grid-cols-2 xl:grid-cols-4"
             >
-            <div class="item space-y-2">
-                <div class="relative bg-slate-100 flex justify-center overflow-hidden group cursor-pointer border rounded-xl">
-                    <img 
-                        src="images/a-Dolls-house.jpg" 
-                        alt="a a-Dolls-house" 
-                        class="w full h-full object-cover"
-                    />
-                    <button class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
-                        Add to reading list
-                    </button>
-                </div>
-                <p class="text-xl">A Doll's House</p>
-                <strong>Henrik Ibsen</strong>
-            </div>
-            <div class="item space-y-2">
-                <div class="relative bg-slate-100 flex justify-center overflow-hidden group cursor-pointer border rounded-xl">
-                    <img 
-                        src="images/a-Dolls-house.jpg" 
-                        alt="a a-Dolls-house" 
-                        class="w full h-full object-cover"
-                    />
-                    <button class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
-                        Add to reading list
-                    </button>
-                </div>
-                <p class="text-xl">A Doll's House</p>
-                <strong>Henrik Ibsen</strong>
-            </div>
-            <div class="item space-y-2">
-                <div class="relative bg-slate-100 flex justify-center overflow-hidden group cursor-pointer border rounded-xl">
-                    <img 
-                        src="images/a-Dolls-house.jpg" 
-                        alt="a a-Dolls-house" 
-                        class="w full h-full object-cover"
-                    />
-                    <button class="status bg-black text-white absolute bottom-0 left-0 right-0 text-center py-2 translate-y-full transition group-hover:translate-y-0">
-                        Add to reading list
-                    </button>
-                </div>
-                <p class="text-xl">A Doll's House</p>
-                <strong>Henrik Ibsen</strong>
             </div>
 
             </div>
