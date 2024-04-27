@@ -27,40 +27,48 @@
     </nav>
     <main class="flex flex-col mx-auto container max-w-6xl md:flex-row">
         <div class="space-y-4 p-2 w-full max-w-[10rem]">
-            <h2 class="text-2xl font-bold">Filters</h2>
-            <h3 class="text-xl">Category</h3>
+            <h2 class="text-2xl font-bold">Filter</h2>
             <div id="filters-container" class="text-xl space-y2">
                 <div>
-                    <input type="checkbox" class="check" id="fiction"/>
-                    <label for="fiction">Fiction</label>
+                    <input type="checkbox" class="check" id="novel"/>
+                    <label for="novel" class="text-sm"">Novels</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="check" id="fiction"/>
-                    <label for="fiction">Fiction</label>
+                    <input type="checkbox" class="check" id="plays"/>
+                    <label for="plays" class="text-sm"">Plays</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="check" id="fiction"/>
-                    <label for="fiction">Fiction</label>
+                    <input type="checkbox" class="check" id="culture"/>
+                    <label for="culture" class="text-sm">Culture & Religion</label>
                 </div>
                 <div>
-                    <input type="checkbox" class="check" id="fiction"/>
-                    <label for="fiction">Fiction</label>
+                    <input type="checkbox" class="check" id="philosophy"/>
+                    <label for="philosophy" class="text-sm">Philosophy</label>
+                </div>
+                <div>
+                    <input type="checkbox" class="check" id="poetry"/>
+                    <label for="poetry" class="text-sm">Poetry</label>
                 </div>
             </div>
             <div>
-                <h3 class="text-2xl font-bold">
-                    Reading List
-                </h3>
-                <span
-                class="inline-flex items-center justify-center rounded-full bg-pink-500 px-2.5 py-0.5 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 9.24 3 10.91 4.21 11.67 6.02 12.44 4.21 14.11 3 15.85 3 19 3 21 5.42 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                    </svg>                  
-                <p id="list-counter" class="whitespace-nowrap text-sm text-bold">0</p>
+                <h3 class="text-2xl font-bold"> Reading List </h3>
+                <div class = "items-center">
+                    <span
+                    class="inline-flex items-center justify-center rounded-full bg-pink-500 px-2.5 py-0.5 text-white mt-2 mb-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="-ms-1 me-1.5 h-4 w-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3 9.24 3 10.91 4.21 11.67 6.02 12.44 4.21 14.11 3 15.85 3 19 3 21 5.42 21 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>                  
+                    <p id="list-counter" class="whitespace-nowrap text-sm text-bold">0</p>
+                    </span>
+                </div>
+                <span class="text-sm text-centre" id="reading-list">
+                    Click "+" to add to the reading list. 
+                    <nl>
+                        <li>Coffee</li>
+                        <li>Tea</li>
+                        <li>Milk</li>
+                      </nl>
                 </span>
-                <p class="text-md py-3 tracking-wide">
-                    Click "Add to Reading List" and shortlist your favourite books. 
-                </p>
             </div>
             </div>
             <!-- Books -->
