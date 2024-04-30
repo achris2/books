@@ -88,6 +88,14 @@ function createBookCard(book) {
     return bookCard; 
 }
 
+function renderUpdatedList() {
+    readingContent.innerHTML = '';
+    readingList.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.title}, ${item.author}`
+        readingContent.appendChild(listItem);
+    })
+}
 
 function updateReadingList(e) {
     const statusEl = e.target;
@@ -107,7 +115,10 @@ function updateReadingList(e) {
         listCounterVar--; 
 
         // remove author from "reading-list"
-        readingList.splice(readingList.indexOf(author));
+        const index = readingList.findIndex(item => item.author === author && item.title === title); 
+        if (index !== -1) {
+            readingList.splice(index, 1);
+        }
 
     } else {
         // add to list 
@@ -121,15 +132,13 @@ function updateReadingList(e) {
 
         // push title and author to reading list 
         readingList.push({ author: author, title: title });
-
-        // add Title of card to "reading-list"
-        const listItem = document.createElement('li');
-        listItem.textContent = `Test`
-        readingContent.appendChild(listItem);
     }
 
     // update listCounter
     listCounter.innerText = listCounterVar.toString();
+
+    // update reading list 
+    renderUpdatedList(); 
 }
 
 
