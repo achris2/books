@@ -12,6 +12,7 @@ let listCounterVar = 0;
 
 // initialise book cards array 
 const bookCards = []; 
+let readingList = []; 
 
 // event listeners for filtering & search
 filterContainer.addEventListener('change', filterBooks);
@@ -33,7 +34,7 @@ function createBookCard(book) {
     const bookCard = document.createElement('div');
     bookCard.dataset.book = JSON.stringify(book);
     bookCard.innerHTML =
-    `<div class="item space-y-2 bg-slate-900 rounded px-6 py-6">
+    `<div class="item space-y-2 bg-slate-900 rounded px-6 py-6" id="bookcard">
         <div class="relative bg-slate-500 flex justify-center overflow-hidden group cursor-pointer border rounded-xl lg:max-h-[450px]">
 
 
@@ -56,18 +57,21 @@ function createBookCard(book) {
         Written in ${book.language}, ${book.year}. 
         </p>
         <!-- Base -->
-            <a
+            <button
             class="status inline-block rounded bg-pink-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-pink-500"
-            href="#"
+            data-author="${book.author}" 
+            data-title="${book.title}"
             >
             +
-            </a>
+            </button>
             
         <!-- Border -->
 
             <a
             class="inline-block rounded border border-current px-8 py-3 text-sm font-medium text-pink-600 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-pink-500"
             href="${book.link}"
+            target="_blank" 
+            rel="noopener noreferrer"
             >
             Wiki
             </a>
@@ -79,20 +83,19 @@ function createBookCard(book) {
 </a>
 </div>
 `
-    bookCard.querySelector('.status').addEventListener('click', updateReadingList);
-    return bookCard
+    const addButton = bookCard.querySelector('.status'); 
+    addButton.addEventListener('click', updateReadingList);
+    return bookCard; 
 }
 
 
 function updateReadingList(e) {
     const statusEl = e.target;
+    const author = statusEl.getAttribute('data-author');
+    const title = statusEl.getAttribute('data-title');
 
     // access nearest element in the DOM 
 
-    const bookCard = statusEl.closest('div');
-    const book = JSON.parse(bookCard.dataset.book);
-
-    console.log(statusEl);
     if (statusEl.classList.contains('added')) {
         // remove from list 
         statusEl.classList.remove('added');
@@ -103,8 +106,8 @@ function updateReadingList(e) {
         // update listCounter
         listCounterVar--; 
 
-        // remove text from "reading-list"
-        
+        // remove author from "reading-list"
+        readingList.splice(readingList.indexOf(author));
 
     } else {
         // add to list 
@@ -116,9 +119,12 @@ function updateReadingList(e) {
         // update listCounter
         listCounterVar++;
 
+        // push title and author to reading list 
+        readingList.push({ author: author, title: title });
+
         // add Title of card to "reading-list"
         const listItem = document.createElement('li');
-        listItem.textContent = `${book.author}, ${book.title}`
+        listItem.textContent = `Test`
         readingContent.appendChild(listItem);
     }
 
